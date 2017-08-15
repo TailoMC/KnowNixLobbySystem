@@ -1,0 +1,52 @@
+name: KnowNixLobbySystem
+author: Tailo
+version: 1.0
+
+main: me.Tailo.KnowNixLobbySystem.System.main
+
+depend: [KnowNixSystem]
+
+commands:
+  build:
+    description: Aktiviere das Bauen
+    usage: /build
+  set:
+    description: Locations setzen
+    usage: /set [Location]
+  nick:
+    description: Nicken
+    usage: /nick [Name]
+    
+permissions:
+  admin:
+    children:
+      srdev: true
+      builder: true
+      content: true
+  srdev:
+    children:
+      dev: true
+  dev:
+    children:
+      srmod: true
+  srmod:
+    children:
+      mod: true
+  mod:
+    children:
+      youtuber: true
+  sup:
+    children:
+      youtuber: true
+  content:
+    children:
+      youtuber: true
+  builder:
+    children:
+      youtuber: true
+  youtuber:
+    children:
+      premiumplus: true
+  premiumplus:
+    children:
+      premium: true
